@@ -1,0 +1,4 @@
+Django>=5.2,<6.0
+djangorestframework>=3.14
+django-filter>=23.0
+drf-nested-routers>=0.93
