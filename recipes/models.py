@@ -219,7 +219,7 @@ class MashStep(models.Model):
     TYPE_CHOICES = [
         ('infusion',    'Infusão'),
         ('decoction',   'Decocção'),
-        ('temperature', 'Temperatura (HERMS/RIMS)'),
+        ('temperature', 'Temperatura (HERMS/RIMS)'), #testes
         ('sparge',      'Lavagem'),
     ]
 
