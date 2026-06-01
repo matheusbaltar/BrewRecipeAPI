@@ -18,13 +18,13 @@ Uma Django REST API para armazenar e gerenciar **receitas completas de cerveja a
 ## Configuração
 
 ```bash
-git clone <seu-repositorio>
+git clone
 cd brewrecipeapi
 
 pip install -r requirements.txt
 
 python manage.py migrate
-python manage.py createsuperuser   # opcional – para /admin
+python manage.py createsuperuser
 python manage.py runserver
 ```
 
