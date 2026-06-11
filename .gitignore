@@ -1,29 +1,36 @@
-# Ambiente virtual Python
-venv/
-env/
-.venv/
-
-# Cache do Python
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
+*.egg-info/
+dist/
+build/
 
-# Banco de dados local
+# Virtualenv / venv
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# Django
+*.sqlite3
 db.sqlite3
+staticfiles/
+media/
 
-# Arquivos de ambiente
+# Variáveis de ambiente
 .env
 
-# IDEs / Editores
-.vscode/
-.idea/
-
-# Arquivos do sistema
-.DS_Store
-Thumbs.db
-
-# Logs
+# Docker
 *.log
 
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# agente
 .claude

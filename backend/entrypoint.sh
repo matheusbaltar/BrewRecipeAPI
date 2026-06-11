@@ -4,7 +4,7 @@
 set -e
 
 echo "Running migrations..."
-python brew_api/manage.py migrate --noinput
+python manage.py migrate --noinput
 
 echo "Starting server..."
 exec "$@"

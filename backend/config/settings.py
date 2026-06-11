@@ -1,14 +1,12 @@
 from pathlib import Path
 import os
-
+from decouple import config
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-change-this-in-production'
-
-DEBUG = True
-
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -34,7 +32,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'brew_api.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -55,11 +53,11 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', 'brewrecipe'),
-        'USER': os.environ.get('POSTGRES_USER', 'brew'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'brew'),
-        'HOST': os.environ.get('POSTGRES_HOST', 'db'),
-        'PORT': os.environ.get('POSTGRES_PORT', '5432'),
+        'NAME':     config('DB_NAME'),
+        'USER':     config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST':     config('DB_HOST', default='db'),
+        'PORT':     config('DB_PORT', default='5432'),
     }
 }
 
