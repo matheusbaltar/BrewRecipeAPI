@@ -17,18 +17,20 @@ services:
       start_period: 10s
 
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: brew_api/Dockerfile
     command: >
-      sh -c "python manage.py migrate &&
-             python manage.py runserver 0.0.0.0:8000"
+      sh -c "python brew_api/manage.py migrate &&
+             python brew_api/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:
       - "8000:8000"
     environment:
       POSTGRES_DB: brewrecipe
-      POSTGRES_USER: brew
-      POSTGRES_PASSWORD: brew
+      POSTGRES_USER: matheus
+      POSTGRES_PASSWORD: 123456
       POSTGRES_HOST: db
     depends_on:
       db:

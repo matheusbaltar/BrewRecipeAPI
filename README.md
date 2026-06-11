@@ -36,7 +36,7 @@ A primeira execução já roda as migrations automaticamente.
 Para criar um superusuário:
 
 ```bash
-docker compose exec web python manage.py createsuperuser
+docker compose exec web python brew_api/manage.py createsuperuser
 ```
 
 ### Sem Docker
@@ -45,7 +45,7 @@ docker compose exec web python manage.py createsuperuser
 git clone https://github.com/matheusbaltar/BrewRecipeAPI.git
 cd BrewRecipeAPI
 
-pip install -r requirements.txt
+pip install -r brew_api/requirements.txt
 
 # Configure as variáveis de ambiente (veja .env.example)
 python manage.py migrate
